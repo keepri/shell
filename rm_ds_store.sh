@@ -6,8 +6,9 @@ if [ $# -ne 1 ]; then
 fi
 
 if [ -d "$1" ]; then
-    find "$1" -type f -name ".DS_Store" -exec rm -f {} \;
-    echo ".DS_Store files removed successfully"
-else
     echo "Directory not found: $1"
+    exit 1
 fi
+
+find "$1" -type f -name ".DS_Store" -exec rm -f {} \;
+echo ".DS_Store files removed successfully"
