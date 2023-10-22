@@ -5,7 +5,7 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-if [ -d "$1" ]; then
+if [ ! -d "$1" ]; then
     echo "Directory not found: $1"
     exit 1
 fi
