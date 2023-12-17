@@ -10,5 +10,6 @@ if [ ! -d "$1" ]; then
     exit 1
 fi
 
+# TODO log each file location deleted
 find "$1" -type f -name ".DS_Store" -exec rm -f {} \;
 echo ".DS_Store files removed successfully"
